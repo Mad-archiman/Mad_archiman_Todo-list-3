@@ -1,76 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Designer & Coder Portfolio</title>
+    <title>Todo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-container">
-            <div class="logo">AP</div>
-            <nav class="nav">
-                <a href="#about">about</a>
-                <a href="#featured">featured</a>
-                <a href="#portfolio">portfolio</a>
-                <a href="#blog">blog</a>
-            </nav>
-            <div class="social-icons">
-                <a href="#"><i class="fas fa-envelope"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fas fa-globe"></i></a>
+    <div class="app-wrapper">
+        <div class="todo-app">
+            <div class="title-container">
+                <h1 class="app-title" id="appTitle" style="cursor: pointer;">My Todo List</h1>
+                <div id="dateDisplay" class="date-display"></div>
+            </div>
+            
+            <!-- 책 표지 -->
+            <div id="bookCover" class="book-cover">
+                <h2 class="book-title">My Todo List</h2>
+            </div>
+            
+            <div class="add-todo-container">
+                <input 
+                    type="text" 
+                    id="newTodo" 
+                    class="todo-input" 
+                    placeholder="할 일을 입력하세요"
+                >
+                <button id="addButton" class="add-button">+</button>
+            </div>
+            
+            <div class="select-all-container">
+                <button id="selectAllBtn" class="select-all-button">전체 선택</button>
+            </div>
+            
+            <ul id="todoList" class="todo-list-container"></ul>
+            
+            <div id="pagination" class="pagination-container"></div>
+            
+            <!-- 달력 페이지 -->
+            <div id="calendarView" class="calendar-view" style="display: none;">
+                <div id="calendar" class="calendar"></div>
+                <div id="selectedDateTodos" class="selected-date-todos"></div>
+            </div>
+            
+            <!-- 메모장 페이지 -->
+            <div id="memoView" class="memo-view" style="display: none;">
+                <canvas id="memoCanvas" class="memo-canvas"></canvas>
             </div>
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="content-wrapper">
-            <!-- Left Side - Designer -->
-            <div class="designer-section">
-                <h1 class="designer-title">designer</h1>
-                <p class="designer-description">UI/UX Designer with a passion for designing beautiful and functional user experiences.</p>
+        
+        <div class="filter-container">
+            <button id="showAllBtn" class="filter-button active">오늘의 할일</button>
+            <button id="showDateBtn" class="filter-button">날짜별 할일</button>
+            <button id="showMemoBtn" class="filter-button">메모장</button>
+        </div>
+        
+        <div class="pen-container">
+            <div class="inkwell">
+                <div class="inkwell-top"></div>
+                <div class="inkwell-body"></div>
+                <div class="ink"></div>
             </div>
-
-            <!-- Center - Split Face Image -->
-            <div class="center-image-container">
-                <div class="split-face">
-                    <div class="face-left">
-                        <div class="face-placeholder"></div>
-                    </div>
-                    <div class="face-right">
-                        <div class="abstract-patterns">
-                            <div class="pattern pattern-1"></div>
-                            <div class="pattern pattern-2"></div>
-                            <div class="pattern pattern-3"></div>
-                            <div class="pattern pattern-4"></div>
-                        </div>
-                        <div class="face-placeholder"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Side - Coder -->
-            <div class="coder-section">
-                <h1 class="coder-title">&lt;coder&gt;</h1>
-                <p class="coder-description">Front End Developer who focuses on writing clean, elegant and efficient code.</p>
-                <div class="code-snippets">
-                    <span class="code-line">&lt;html&gt;</span>
-                    <span class="code-line">height:184px;</span>
-                    <span class="code-line">class='jedi'&gt;</span>
-                    <span class="code-line">S3 HTML5</span>
-                    <span class="code-line">lor:#000;</span>
-                    <span class="code-line">Query</span>
-                </div>
+            <div class="fountain-pen">
+                <div class="pen-cap"></div>
+                <div class="pen-body"></div>
+                <div class="pen-nib"></div>
             </div>
         </div>
-    </main>
-
-    <script src="main.js"></script>
+    </div>
+    
+    <script type="module" src="script.js"></script>
 </body>
 </html>
